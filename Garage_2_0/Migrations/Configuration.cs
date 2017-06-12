@@ -29,11 +29,11 @@ namespace Garage_2_0.Migrations
             //
             context.Vehicles.AddOrUpdate(
                 p => p.RegCode,
-                new ParkedVehicle { RegCode = "ABC123", Type = VehicleType.Airplane, Model = "747", Brand = "Boeing", NumberOfWheels = 3, Color = VehicleColor.White, DateCheckedIn = new DateTime() },
-                new ParkedVehicle { RegCode = "117", Type= VehicleType.Car, Brand="Ford", Model="T", Color = VehicleColor.Black, NumberOfWheels=4, DateCheckedIn = new DateTime()},
-                new ParkedVehicle { RegCode = "GHI789", Type = VehicleType.Motorcycle, Brand = "Harley-Davidson", Model = "Sportster", NumberOfWheels = 2, Color = VehicleColor.Red, DateCheckedIn = new DateTime() },
-                new ParkedVehicle { RegCode = "MNO012", Type = VehicleType.Boat, Brand = "Yamaha", Model = "242 Limited S", Color=VehicleColor.White, NumberOfWheels = 0, DateCheckedIn = new DateTime() },
-                new ParkedVehicle { RegCode = "DEF456", Type= VehicleType.Bus, Color = VehicleColor.Red, Brand="SL", Model = "Blåbuss", NumberOfWheels=8, DateCheckedIn = new DateTime()}
+                new ParkedVehicle { RegCode = "ABC123", Type = VehicleType.Airplane, Model = "747", Brand = "Boeing", NumberOfWheels = 3, Color = VehicleColor.White, DateCheckedIn = DateTime.Now },
+                new ParkedVehicle { RegCode = "117", Type= VehicleType.Car, Brand="Ford", Model="T", Color = VehicleColor.Black, NumberOfWheels=4, DateCheckedIn = DateTime.Now},
+                new ParkedVehicle { RegCode = "GHI789", Type = VehicleType.Motorcycle, Brand = "Harley-Davidson", Model = "Sportster", NumberOfWheels = 2, Color = VehicleColor.Red, DateCheckedIn = DateTime.Now },
+                new ParkedVehicle { RegCode = "MNO012", Type = VehicleType.Boat, Brand = "Yamaha", Model = "242 Limited S", Color=VehicleColor.White, NumberOfWheels = 0, DateCheckedIn = DateTime.Now },
+                new ParkedVehicle { RegCode = "DEF456", Type= VehicleType.Bus, Color = VehicleColor.Red, Brand="SL", Model = "Blåbuss", NumberOfWheels=8, DateCheckedIn = DateTime.Now}
 
                 );
         }

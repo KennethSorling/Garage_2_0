@@ -140,6 +140,10 @@
     <Compile Include="Migrations\201706120949143_Initial Model.Designer.cs">
       <DependentUpon>201706120949143_Initial Model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706121237106_fixed date bug, I think.cs" />
+    <Compile Include="Migrations\201706121237106_fixed date bug, I think.Designer.cs">
+      <DependentUpon>201706121237106_fixed date bug, I think.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ParkedVehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -199,6 +203,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706120949143_Initial Model.resx">
       <DependentUpon>201706120949143_Initial Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706121237106_fixed date bug, I think.resx">
+      <DependentUpon>201706121237106_fixed date bug, I think.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
