@@ -80,7 +80,7 @@ namespace Garage_2_0.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,RegCode,Type,Brand,Model,Color,NumberOfWheels,DateCheckedIn")] ParkedVehicle parkedVehicle)
+        public ActionResult Edit([Bind(Include = "Id,RegCode,Type,Brand,Model,Color,NumberOfWheels")] ParkedVehicle parkedVehicle)
         {
             if (ModelState.IsValid)
             {
@@ -112,9 +112,23 @@ namespace Garage_2_0.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             ParkedVehicle parkedVehicle = db.Vehicles.Find(id);
+            var vm = new UnparkedVehicleViewModel(parkedVehicle);
             db.Vehicles.Remove(parkedVehicle);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult FindByRegCode(string regCode)
+        {
+            if (!string.IsNullOrEmpty(regCode))
+            {
+                var vehicle = db.Vehicles
+                    .Where(p => p.RegCode == regCode)
+                    .SingleOrDefault();
+
+                if (vehicle != null) return View(vehicle);
+            }
+            return HttpNotFound();
         }
 
         protected override void Dispose(bool disposing)
