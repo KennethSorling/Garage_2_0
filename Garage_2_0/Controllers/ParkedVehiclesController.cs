@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Garage_2_0.DataAccessLayer;
 using Garage_2_0.Models;
+using Garage_2_0.Enum;
 
 namespace Garage_2_0.Controllers
 {
@@ -80,7 +81,7 @@ namespace Garage_2_0.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,RegCode,Type,Brand,Model,Color,NumberOfWheels,DateCheckedIn")] ParkedVehicle parkedVehicle)
+        public ActionResult Edit([Bind(Include = "Id,RegCode,Type,Brand,Model,Color,NumberOfWheels")] ParkedVehicle parkedVehicle)
         {
             if (ModelState.IsValid)
             {
@@ -112,10 +113,98 @@ namespace Garage_2_0.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             ParkedVehicle parkedVehicle = db.Vehicles.Find(id);
+            var vm = new UnparkedVehicleViewModel(parkedVehicle);
             db.Vehicles.Remove(parkedVehicle);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult Find()
+        {
+            return View();
+        }
+
+        [HttpPost, ActionName("Find")]
+        [ValidateAntiForgeryToken]
+        public ActionResult FindBy(string by, string criteria)
+        {
+            IQueryable<ParkedVehicle> vehicles = db.Vehicles;
+            switch (by)
+            {
+                case "regcode":
+                    vehicles = db.Vehicles.Where(p => p.RegCode == criteria);
+                    break;
+                case "type":
+                    VehicleType t;
+                    if (System.Enum.TryParse<VehicleType>(criteria, true, out t))
+                    {
+                        vehicles = db.Vehicles.Where(p => p.Type == t);
+                    }
+                    else
+                    {
+                        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                    }
+                    break;
+                case "brand":
+                    vehicles = db.Vehicles.Where(p => p.Brand == criteria);
+                    break;
+                case "model":
+                    vehicles = db.Vehicles.Where(p => p.Model == criteria);
+                    break;
+                case "color":
+                    VehicleColor color;
+                    if (System.Enum.TryParse<VehicleColor>(criteria, true, out color))
+                    {
+                        vehicles = db.Vehicles.Where(p => p.Color == color);
+                    }
+                    else
+                    {
+                        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                    }
+                    break;
+                case "numberofwheels":
+                    int numberOfWheels = 0;
+                    if (int.TryParse(criteria, out numberOfWheels))
+                    {
+                        vehicles = db.Vehicles.Where(p => p.NumberOfWheels == numberOfWheels);
+                    }
+                    else
+                    {
+                        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                    }
+
+                    break;
+                case "datecheckedin":
+                    DateTime dateCheckedIn;
+                    if (DateTime.TryParse(criteria, out dateCheckedIn))
+                    {
+                        vehicles = db.Vehicles.Where(p => p.DateCheckedIn == dateCheckedIn);
+                    }
+                    else
+                    {
+                        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                    }
+                    break;
+                default:
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            return View(vehicles.ToList());
+        }
+        public ActionResult FindByRegCode(string regCode)
+        {
+            if (!string.IsNullOrEmpty(regCode))
+            {
+                var vehicle = db.Vehicles
+                    .Where(p => p.RegCode == regCode)
+                    .SingleOrDefault();
+
+                if (vehicle != null) return View(vehicle);
+            }
+            return HttpNotFound();
+        }
+
+
 
         protected override void Dispose(bool disposing)
         {
