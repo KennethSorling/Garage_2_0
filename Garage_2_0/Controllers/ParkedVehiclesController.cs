@@ -154,13 +154,15 @@ namespace Garage_2_0.Controllers
         // POST: ParkedVehicles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id, bool? wantReceipt = false)
         {
+            bool doWantReceipt = wantReceipt.HasValue && wantReceipt.Value;
             ParkedVehicle parkedVehicle = db.Vehicles.Find(id);
             var vm = new UnparkedVehicleViewModel(parkedVehicle);
             db.Vehicles.Remove(parkedVehicle);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            if (!doWantReceipt) return RedirectToAction("Index");
+            return View("Receipt", vm);
         }
 
         [HttpGet]
