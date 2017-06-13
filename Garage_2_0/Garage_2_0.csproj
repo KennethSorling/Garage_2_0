@@ -191,6 +191,7 @@
     <Content Include="Views\ParkedVehicles\Index.cshtml" />
     <Content Include="Views\ParkedVehicles\FindByRegCode.cshtml" />
     <Content Include="Views\ParkedVehicles\Find.cshtml" />
+    <Content Include="Views\ParkedVehicles\FindResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

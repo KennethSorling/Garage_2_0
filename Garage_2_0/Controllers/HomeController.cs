@@ -10,7 +10,7 @@ namespace Garage_2_0.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "ParkedVehicles");
         }
 
         public ActionResult About()

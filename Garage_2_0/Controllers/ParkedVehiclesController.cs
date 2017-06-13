@@ -189,7 +189,7 @@ namespace Garage_2_0.Controllers
                 default:
                     return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            return View(vehicles.ToList());
+            return View("FindResults", vehicles.ToList());
         }
         public ActionResult FindByRegCode(string regCode)
         {

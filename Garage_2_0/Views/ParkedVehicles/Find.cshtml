@@ -1,13 +1,39 @@
 ﻿
 @{
-    ViewBag.Title = "Find";
+    ViewBag.Title = "Find Vehicle";
 }
 
 <h2>Find Vehicle</h2>
-@Html.BeginForm()
+<div class="container">
 
+@using (Html.BeginForm("Find",
+            "ParkedVehicles",
+            new {},
+            FormMethod.Post,
+            new {}))
 
-<form method="post">
-
-</form>
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label class="control-label col-md-2" for="by">Search Field</label>
+        <select class="form-control" name="by" id="by">
+            <option value="regcode">Registration Code</option>
+            <option value="color">Color</option>
+            <option value="type">Vehicle Type</option>
+            <option value="brand">Brand</option>
+            <option value="model">Model</option>
+            <option value="numberofwheels">Number of Wheels</option>
+            <option value="datecheckedin">Time of Parking</option>
+        </select>
+    </div>
+    <div class="form-goup">
+        <label class="control-label col-md-2" for="criteria">Search text</label>
+        <input class="form-control text-box" name="criteria" id="criteria"/>
+    </div>
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" class="btn btn-default" value="Find" />
+    </div>
+}
+    @Html.ActionLink("Back To List", "Index")
+</div>
 
