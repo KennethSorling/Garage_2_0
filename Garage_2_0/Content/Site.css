@@ -22,3 +22,69 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* From another project*/
+html{
+    position: relative;
+    max-width: 1600px;
+    background-color: wheat;
+}
+
+body {
+	color:#330000;
+    background-color:burlywood;
+    margin-right: 80px;
+    margin-left: 40px;
+    width: auto;
+}
+
+footer {
+    color:darkred;
+    background-color:chartreuse;
+    font-size: 110%;
+}
+
+div {
+    margin: auto;
+    max-width: 1500px;
+}
+
+a:link {
+    color:crimson;
+    background-color: transparent; 
+    text-decoration: none;
+}
+
+a:visited {
+    color:whitesmoke;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+table, td {
+	border: 2px solid darkred;
+    text-align: center;
+    width: auto;
+    height:auto;
+}
+
+table, tr{
+	border: 2px solid darkred;
+    text-align: center;
+}
+
+table {
+	width: auto;
+    height:auto;
+    text-align:center;
+}
+
+.nav {
+    background-color:moccasin;
+}
