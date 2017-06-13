@@ -1,12 +1,12 @@
 ﻿@model Garage_2_0.Models.ParkedVehicle
 
 @{
-    ViewBag.Title = "Leave the garage";
+    ViewBag.Title = "Check out vehicle from the garage";
 }
 
-<h2>Leave the garage</h2>
+<h2>Check out vehicle from the garage</h2>
 
-<h3>Are you sure you want to leave the garage?</h3>
+<h3>Are you sure you want to check out your vehicle?</h3>
 <div>
     <h4>Parked Vehicle</h4>
     <hr />
@@ -73,7 +73,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <input type="submit" value="Check Out" class="btn btn-default" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>
     }
