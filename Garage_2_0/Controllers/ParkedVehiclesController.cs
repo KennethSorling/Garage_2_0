@@ -19,44 +19,51 @@ namespace Garage_2_0.Controllers
         // GET: ParkedVehicles
         public ActionResult Index(string orderBy)
         {
-            var parkedvehicle = db.Vehicles.Select(p => p);
+            bool descending = false;
+            string sortOrder = "ascending";
+            if (TempData["sortOrder"] != null)
+            {
+                sortOrder = TempData["sortOrder"].ToString();
+                if (sortOrder == "ascending")
+                {
+                    TempData["sortOrder"] = "descending";
+                }
+            }
+            else
+            {
+                TempData["sortOrder"] = "descending";
+            }
+            descending = sortOrder == "descending" ? true:false;
 
-            if (orderBy == "regcode")
+            var parkedvehicle = db.Vehicles.Select(p => p);
+            switch (orderBy)
             {
-                parkedvehicle = parkedvehicle.OrderBy(p => p.RegCode);
-                return View(parkedvehicle.ToList());
+                case "regcode":
+                    parkedvehicle = descending ? parkedvehicle.OrderByDescending(p => p.RegCode) : parkedvehicle.OrderBy(p => p.RegCode);
+                    break;
+                case "type":
+                    parkedvehicle = descending ? parkedvehicle.OrderByDescending(p => p.Type) : parkedvehicle.OrderBy(p => p.Type);
+                    break;
+                case "brand":
+                    parkedvehicle = descending ? parkedvehicle.OrderByDescending(p => p.Brand) : parkedvehicle.OrderBy(p => p.Brand);
+                    break;
+                case "model":
+                    parkedvehicle = descending ? parkedvehicle.OrderByDescending(p => p.Model) : parkedvehicle.OrderBy(p => p.Model);
+                    break;
+                case "color":
+                    parkedvehicle = descending ? parkedvehicle.OrderByDescending(p => p.Color) : parkedvehicle.OrderBy(p => p.Color);
+                    break;
+                case "numberofwheels":
+                    parkedvehicle = descending ? parkedvehicle.OrderByDescending(p => p.NumberOfWheels) : parkedvehicle.OrderBy(p => p.NumberOfWheels);
+                    break;
+                case "datecheckedin":
+                    parkedvehicle = descending ? parkedvehicle.OrderByDescending(p => p.DateCheckedIn) : parkedvehicle.OrderBy(p => p.DateCheckedIn);
+                    break;
+                default:
+                    break;
             }
-            if (orderBy == "type")
-            {
-                parkedvehicle = parkedvehicle.OrderBy(p => p.Type);
-                return View(parkedvehicle.ToList());
-            }
-            if (orderBy == "brand")
-            {
-                parkedvehicle = parkedvehicle.OrderBy(p => p.Brand);
-                return View(parkedvehicle.ToList());
-            }
-            if (orderBy == "model")
-            {
-                parkedvehicle = parkedvehicle.OrderBy(p => p.Model);
-                return View(parkedvehicle.ToList());
-            }
-            if (orderBy == "color")
-            {
-                parkedvehicle = parkedvehicle.OrderBy(p => p.Color);
-                return View(parkedvehicle.ToList());
-            }
-            if (orderBy == "numberofwheels")
-            {
-                parkedvehicle = parkedvehicle.OrderBy(p => p.NumberOfWheels);
-                return View(parkedvehicle.ToList());
-            }
-            if (orderBy == "datecheckedin")
-            {
-                parkedvehicle = parkedvehicle.OrderBy(p => p.DateCheckedIn);
-                return View(parkedvehicle.ToList());
-            }
-            return View(db.Vehicles.ToList());
+            return View(parkedvehicle.ToList());
+
         }
 
         // GET: ParkedVehicles/Details/5
