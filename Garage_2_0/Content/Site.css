@@ -40,7 +40,7 @@ body {
 
 footer {
     color:darkred;
-    background-color:chartreuse;
+    background-color:goldenrod;
     font-size: 110%;
 }
 
@@ -91,6 +91,3 @@ table {
     text-align:center;
 }
 
-/*.nav {
-    background-color:moccasin;
-}*/
