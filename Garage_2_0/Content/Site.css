@@ -50,13 +50,13 @@ div {
 }
 
 a:link {
-    color:crimson;
+    color:brown;
     background-color: transparent; 
     text-decoration: none;
 }
 
 a:visited {
-    color:whitesmoke;
+    color:brown;
     background-color: transparent;
     text-decoration: none;
 }
@@ -75,6 +75,12 @@ table, td {
 }
 
 table, tr{
+	border: 2px solid darkred;
+    text-align: center;
+}
+
+table, th{
+    color: black;
 	border: 2px solid darkred;
     text-align: center;
 }

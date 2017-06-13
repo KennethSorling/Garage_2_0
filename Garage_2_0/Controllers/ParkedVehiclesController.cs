@@ -17,8 +17,45 @@ namespace Garage_2_0.Controllers
         private GarageContext db = new GarageContext();
 
         // GET: ParkedVehicles
-        public ActionResult Index()
+        public ActionResult Index(string orderBy)
         {
+            var parkedvehicle = db.Vehicles.Select(p => p);
+
+            if (orderBy == "regcode")
+            {
+                parkedvehicle = parkedvehicle.OrderBy(p => p.RegCode);
+                return View(parkedvehicle.ToList());
+            }
+            if (orderBy == "type")
+            {
+                parkedvehicle = parkedvehicle.OrderBy(p => p.Type);
+                return View(parkedvehicle.ToList());
+            }
+            if (orderBy == "brand")
+            {
+                parkedvehicle = parkedvehicle.OrderBy(p => p.Brand);
+                return View(parkedvehicle.ToList());
+            }
+            if (orderBy == "model")
+            {
+                parkedvehicle = parkedvehicle.OrderBy(p => p.Model);
+                return View(parkedvehicle.ToList());
+            }
+            if (orderBy == "color")
+            {
+                parkedvehicle = parkedvehicle.OrderBy(p => p.Color);
+                return View(parkedvehicle.ToList());
+            }
+            if (orderBy == "numberofwheels")
+            {
+                parkedvehicle = parkedvehicle.OrderBy(p => p.NumberOfWheels);
+                return View(parkedvehicle.ToList());
+            }
+            if (orderBy == "datecheckedin")
+            {
+                parkedvehicle = parkedvehicle.OrderBy(p => p.DateCheckedIn);
+                return View(parkedvehicle.ToList());
+            }
             return View(db.Vehicles.ToList());
         }
 
