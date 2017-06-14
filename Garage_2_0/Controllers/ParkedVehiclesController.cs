@@ -125,7 +125,7 @@ namespace Garage_2_0.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,RegCode,Type,Brand,Model,Color,NumberOfWheels")] ParkedVehicle parkedVehicle)
+        public ActionResult Edit([Bind(Include = "Id,RegCode,Type,Brand,Model,Color,NumberOfWheels,DateCheckedIn")] ParkedVehicle parkedVehicle)
         {
             if (ModelState.IsValid)
             {
