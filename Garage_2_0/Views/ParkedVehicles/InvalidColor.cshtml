@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "InvalidColor";
+}
+
+<h2>Invalid Color</h2>
+
+<p>Sorry, the garage currently only host vehicles of these seven colors:<br />
+     <strong>Black, Blue, Brown, Green, Red, White and Yellow</strong>.
+<p>We do not recognize the color type &quot; @ViewBag.Color &quot;.</p>
+<p>Please revise your search parameter(s).</p>
+<p>
+    @Html.ActionLink("Back", "Find") | @Html.ActionLink("Back to Index", "Index")
+</p>
+

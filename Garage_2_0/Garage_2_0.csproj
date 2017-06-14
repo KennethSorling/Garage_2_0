@@ -205,6 +205,9 @@
     <Content Include="Views\ParkedVehicles\Find.cshtml" />
     <Content Include="Views\ParkedVehicles\FindResults.cshtml" />
     <Content Include="Views\ParkedVehicles\Receipt.cshtml" />
+    <Content Include="Views\ParkedVehicles\SnakeEyes.cshtml" />
+    <Content Include="Views\ParkedVehicles\InvalidVehicleType.cshtml" />
+    <Content Include="Views\ParkedVehicles\InvalidColor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

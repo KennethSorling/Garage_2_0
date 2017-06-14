@@ -195,7 +195,8 @@ namespace Garage_2_0.Controllers
                         }
                         else
                         {
-                            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                            ViewBag.VehicleType = criteria;
+                            return View("InvalidVehicleType");
                         }
                         break;
                     case "brand":
@@ -212,8 +213,10 @@ namespace Garage_2_0.Controllers
                         }
                         else
                         {
-                            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                            ViewBag.Color = criteria;
+                            return View("InvalidColor");
                         }
+
                         break;
                     case "numberofwheels":
                         int numberOfWheels = 0;
@@ -241,6 +244,12 @@ namespace Garage_2_0.Controllers
                     default:
                         return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
                 }
+
+                if (vehicles.ToList().Count == 0)
+                {
+                    return View("SnakeEyes");
+                }
+
                 return View("FindResults", vehicles.ToList());
             }
         }
@@ -254,7 +263,7 @@ namespace Garage_2_0.Controllers
 
                 if (vehicle != null) return View(vehicle);
             }
-            return HttpNotFound();
+            return View("SnakeEyes");
         }
 
 
