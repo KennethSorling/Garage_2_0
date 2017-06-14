@@ -25,8 +25,10 @@ namespace Garage_2_0.Models
         public DateTime DateCheckedOut { get; set; }
         [Display(Name = "Hourly Parking Rate")]
         public Single HourlyRate { get; set; }
+        [Display(Name = "VAT Rate")]
+        public Single VATRate => 25.0f;
         [Display(Name = "Time Parked")]
-        [DisplayFormat(DataFormatString = "{0:hh\\:mm}")]
+        [DisplayFormat(DataFormatString = "{0:%d} day(s) {0:hh\\:mm\\:ss}")]
         public TimeSpan TimeParked
         {
             get {
@@ -45,6 +47,8 @@ namespace Garage_2_0.Models
                 return Math.Floor(intervals * pricePerInterval);
             }
         }
+        public double VAT => TotalCharge * 0.19;
+
         public UnparkedVehicleViewModel()
         {
             HourlyRate = 65.0f;

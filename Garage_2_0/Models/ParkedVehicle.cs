@@ -19,6 +19,7 @@ namespace Garage_2_0.Models
         public string Model { get; set; }
         public VehicleColor Color { get; set; }
         [Display(Name = "Number of Wheels")]
+        [Range(0, Int32.MaxValue)]
         public int NumberOfWheels { get; set; }
         [Display(Name = "Time of Parking")]
         public DateTime? DateCheckedIn { get; set; }

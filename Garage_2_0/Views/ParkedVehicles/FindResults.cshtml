@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Garage_2_0.Models.ParkedVehicle>
 
 @{
-    ViewBag.Title = "FindResults";
+    ViewBag.Title = "Search Results";
 }
 
-<h2>FindResults</h2>
+<h2>Vehicles found:</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -67,3 +67,4 @@
 }
 
 </table>
+@Html.ActionLink("Back To Index", "Index")

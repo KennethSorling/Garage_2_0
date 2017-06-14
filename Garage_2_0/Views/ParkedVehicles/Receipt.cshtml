@@ -58,6 +58,8 @@
             @Html.DisplayFor(model => model.NumberOfWheels)
         </dd>
 
+        <dt><hr /></dt>
+        <dd><hr /></dd>
         <dt>
             @Html.DisplayNameFor(model => model.DateCheckedIn)
         </dt>
@@ -79,7 +81,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.HourlyRate)
+            @Html.DisplayFor(model => model.HourlyRate) SEK
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.TimeParked)
@@ -88,12 +90,33 @@
         <dd>
             @Html.DisplayFor(model => model.TimeParked)
         </dd>
+        <dt><hr /></dt>
+        <dd><hr /></dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VATRate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VATRate) %
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => Model.VAT)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.VAT) SEK
+        </dd>
+        <dt>
+            <hr />
+        </dt>
+        <dd>
+            <hr />
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.TotalCharge)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TotalCharge)
+            @Html.DisplayFor(model => model.TotalCharge) SEK
         </dd>
 
     </dl>
