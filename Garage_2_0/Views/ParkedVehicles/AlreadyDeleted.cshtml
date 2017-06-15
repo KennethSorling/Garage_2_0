@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Vehicle Not Found";
+}
+
+<h2>Vehicle not Found</h2>
+<p>Sorry, no vehicle found with the database Id: @ViewBag.Id.</p>
+<p>It has probably been checked out already.</p>
+<p>You may have ended up here by clicking the &quot;back&quot; button on the browser right after checking the vehicle out. </p>
+<p>We suggest clicking one of the &quot;Back To List&quot; links in the future.</p>
+<p>
+    @Html.ActionLink("Back to Index", "Index")
+</p>

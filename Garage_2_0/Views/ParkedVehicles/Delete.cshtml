@@ -71,10 +71,10 @@
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
-        <input class="form-check-input" type="checkbox" id="wantReceipt" name="wantReceipt" value="true"  />
+        <input class="form-check-input" type="checkbox" id="wantReceipt" name="wantReceipt" value="true" checked />
         <label for="wantReceipt">Print Receipt</label>
         <div class="form-actions no-color">
-            <input type="submit" value="Check Out" class="btn btn-default" checked /> |
+            <input type="submit" value="Check Out" class="btn btn-default" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>
     }

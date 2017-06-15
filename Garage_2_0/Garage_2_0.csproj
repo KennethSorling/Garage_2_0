@@ -208,6 +208,7 @@
     <Content Include="Views\ParkedVehicles\SnakeEyes.cshtml" />
     <Content Include="Views\ParkedVehicles\InvalidVehicleType.cshtml" />
     <Content Include="Views\ParkedVehicles\InvalidColor.cshtml" />
+    <Content Include="Views\ParkedVehicles\AlreadyDeleted.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
