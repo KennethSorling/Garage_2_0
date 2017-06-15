@@ -146,7 +146,8 @@ namespace Garage_2_0.Controllers
             ParkedVehicle parkedVehicle = db.Vehicles.Find(id);
             if (parkedVehicle == null)
             {
-                return HttpNotFound();
+                ViewBag.Id = id;
+                return View("AlreadyDeleted");
             }
             return View(parkedVehicle);
         }
@@ -234,7 +235,7 @@ namespace Garage_2_0.Controllers
                         DateTime dateCheckedIn;
                         if (DateTime.TryParse(criteria, out dateCheckedIn))
                         {
-                            vehicles = db.Vehicles.Where(p => p.DateCheckedIn == dateCheckedIn);
+                            vehicles = db.Vehicles.Where(p =>  p.DateCheckedIn.Equals (dateCheckedIn));
                         }
                         else
                         {
