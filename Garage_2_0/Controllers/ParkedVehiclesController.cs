@@ -238,7 +238,8 @@ namespace Garage_2_0.Controllers
                         }
                         else
                         {
-                            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                            //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                            return View("SnakeEyes");
                         }
                         break;
                     default:
