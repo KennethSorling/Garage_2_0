@@ -235,7 +235,18 @@ namespace Garage_2_0.Controllers
                         DateTime dateCheckedIn;
                         if (DateTime.TryParse(criteria, out dateCheckedIn))
                         {
-                            vehicles = db.Vehicles.Where(p =>  p.DateCheckedIn.Equals (dateCheckedIn));
+                            var matches = new List<ParkedVehicle>();
+                            foreach (var v in vehicles)
+                            {
+                                if (null != v.DateCheckedIn && v.DateCheckedIn.ToString() == dateCheckedIn.ToString())
+                                {
+                                    matches.Add(v);
+                                }
+                            }
+
+                            return View("FindResults", matches);
+
+                            //vehicles = db.Vehicles.Where(p =>  p.DateCheckedIn.Equals(dateCheckedIn));
                         }
                         else
                         {
