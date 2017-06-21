@@ -16,9 +16,44 @@ namespace Garage_2_0.Controllers
         private GarageContext db = new GarageContext();
 
         // GET: Members
-        public ActionResult Index()
-        {
-            return View(db.Members.ToList());
+        public ActionResult Index(string orderBy)
+        { 
+            bool descending = false;
+            string sortOrder = "ascending";
+            if (TempData["sortOrder"] != null)
+            {
+                sortOrder = TempData["sortOrder"].ToString();
+                if (sortOrder == "ascending")
+                {
+                    TempData["sortOrder"] = "descending";
+                }
+            }
+            else
+            {
+                TempData["sortOrder"] = "descending";
+            }
+            descending = sortOrder == "descending" ? true : false;
+
+            var member = db.Members.Select(p => p);
+            switch (orderBy)
+            {
+                case "firstname":
+                    member = descending? member.OrderByDescending(p => p.FirstName) : member.OrderBy(p => p.FirstName);
+                    break;
+                case "lastname":
+                    member = descending? member.OrderByDescending(p => p.LastName) : member.OrderBy(p => p.LastName);
+                    break;
+                case "age":
+                    member = descending? member.OrderByDescending(p => p.Age) : member.OrderBy(p => p.Age);
+                    break;
+                case "phone":
+                    member = descending? member.OrderByDescending(p => p.Phone) : member.OrderBy(p => p.Phone);
+                    break;
+                default:
+                    break;
+            }
+            return View(member.ToList());
+
         }
 
         // GET: Members/Details/5
