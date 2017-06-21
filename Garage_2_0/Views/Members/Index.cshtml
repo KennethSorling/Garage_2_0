@@ -12,16 +12,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.FirstName)
+            @Html.ActionLink("First Name", "Index", new { orderBy = "firstname" })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LastName)
+            @Html.ActionLink("Last Name", "Index", new { orderBy = "lastname" })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Age)
+            @Html.ActionLink("Age", "Index", new { orderBy = "age" })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Phone)
+            @Html.ActionLink("Phone Number", "Index", new { orderBy = "phone" })
         </th>
         <th></th>
     </tr>
