@@ -278,46 +278,6 @@ namespace Garage_2_0.Controllers
             return View("SnakeEyes");
         }
 
-        [HttpPost, ActionName("Find Member")]
-        [ValidateAntiForgeryToken]
-        //public ActionResult FindByMember(string by, string criteria)
-        //{
-        //    if (criteria == "")
-        //    {
-        //        return View();
-        //    }
-        //    else
-        //    {
-                //IQueryable<Member> member = db.Members;
-                //switch (by)
-                //{
-                //    case "firstname":
-                //        member = db.Members.Where(p => p.FirstName == criteria);
-                //        break;
-                //    case "lastname":
-                //        member = db.Members.Where(p => p.LastName == criteria);
-                //        break;
-                //    case "phone":
-                //        member = db.Members.Where(p => p.Phone == criteria);
-                //        break;
-                //    case "age":
-                //        int age = 0;
-                //        if (int.TryParse(criteria, out age))
-                //            member = db.Members.Where(p => p.Age == age);
-                //        break;
-                //    default:
-                //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-                //}
-
-                //if (member.ToList().Count == 0)
-                //{
-                //    return View("SnakeEyes");
-                //}
-
-                //return View("FindResults", member.ToList());
-        //    }
-        //}
-
 
         protected override void Dispose(bool disposing)
         {

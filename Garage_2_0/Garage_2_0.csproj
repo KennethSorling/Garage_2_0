@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\ParkedVehiclesController.cs" />
     <Compile Include="DataAccessLayer\DatabaseContext.cs" />
     <Compile Include="Enum\VehicleColor.cs" />
@@ -155,6 +156,18 @@
     <Compile Include="Migrations\201706131440074_Augmented ViewModel again.cs" />
     <Compile Include="Migrations\201706131440074_Augmented ViewModel again.Designer.cs">
       <DependentUpon>201706131440074_Augmented ViewModel again.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706211139062_AA.cs" />
+    <Compile Include="Migrations\201706211139062_AA.Designer.cs">
+      <DependentUpon>201706211139062_AA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706211147021_update_database.cs" />
+    <Compile Include="Migrations\201706211147021_update_database.Designer.cs">
+      <DependentUpon>201706211147021_update_database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706211148599_aa.cs" />
+    <Compile Include="Migrations\201706211148599_aa.Designer.cs">
+      <DependentUpon>201706211148599_aa.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Member.cs" />
@@ -210,6 +223,14 @@
     <Content Include="Views\ParkedVehicles\InvalidVehicleType.cshtml" />
     <Content Include="Views\ParkedVehicles\InvalidColor.cshtml" />
     <Content Include="Views\ParkedVehicles\AlreadyDeleted.cshtml" />
+    <Content Include="Views\Members\Create.cshtml" />
+    <Content Include="Views\Members\Delete.cshtml" />
+    <Content Include="Views\Members\Details.cshtml" />
+    <Content Include="Views\Members\Edit.cshtml" />
+    <Content Include="Views\Members\Index.cshtml" />
+    <Content Include="Views\Members\Find.cshtml" />
+    <Content Include="Views\Members\FindResults.cshtml" />
+    <Content Include="Views\Members\SnakeEyes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -237,6 +258,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706131440074_Augmented ViewModel again.resx">
       <DependentUpon>201706131440074_Augmented ViewModel again.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706211139062_AA.resx">
+      <DependentUpon>201706211139062_AA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706211147021_update_database.resx">
+      <DependentUpon>201706211147021_update_database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
