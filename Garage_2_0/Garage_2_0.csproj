@@ -132,29 +132,10 @@
     <Compile Include="Controllers\ParkedVehiclesController.cs" />
     <Compile Include="DataAccessLayer\DatabaseContext.cs" />
     <Compile Include="Enum\VehicleColor.cs" />
-    <Compile Include="Enum\VehicleType.cs" />
+    <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\VehicleType.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706120949143_Initial Model.cs" />
-    <Compile Include="Migrations\201706120949143_Initial Model.Designer.cs">
-      <DependentUpon>201706120949143_Initial Model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706121237106_fixed date bug, I think.cs" />
-    <Compile Include="Migrations\201706121237106_fixed date bug, I think.Designer.cs">
-      <DependentUpon>201706121237106_fixed date bug, I think.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706131405143_Added ViewModel.cs" />
-    <Compile Include="Migrations\201706131405143_Added ViewModel.Designer.cs">
-      <DependentUpon>201706131405143_Added ViewModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706131428532_Augmented ViewModel.cs" />
-    <Compile Include="Migrations\201706131428532_Augmented ViewModel.Designer.cs">
-      <DependentUpon>201706131428532_Augmented ViewModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706131440074_Augmented ViewModel again.cs" />
-    <Compile Include="Migrations\201706131440074_Augmented ViewModel again.Designer.cs">
-      <DependentUpon>201706131440074_Augmented ViewModel again.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ParkedVehicle.cs" />
@@ -220,23 +201,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706120949143_Initial Model.resx">
-      <DependentUpon>201706120949143_Initial Model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706121237106_fixed date bug, I think.resx">
-      <DependentUpon>201706121237106_fixed date bug, I think.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706131405143_Added ViewModel.resx">
-      <DependentUpon>201706131405143_Added ViewModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706131428532_Augmented ViewModel.resx">
-      <DependentUpon>201706131428532_Augmented ViewModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706131440074_Augmented ViewModel again.resx">
-      <DependentUpon>201706131440074_Augmented ViewModel again.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

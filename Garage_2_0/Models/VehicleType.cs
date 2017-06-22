@@ -5,13 +5,9 @@ using System.Web;
 
 namespace Garage_2_0.Enum
 {
-    public enum VehicleType
+    public class VehicleType
     {
-        None,
-        Airplane,
-        Boat,
-        Bus,
-        Car,
-        Motorcycle
+        public int Id {get; set;}
+        public string TypeName { get; set; }
     }
 }
