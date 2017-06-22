@@ -84,6 +84,11 @@ namespace Garage_2_0.Controllers
         // GET: ParkedVehicles/Create
         public ActionResult Create()
         {
+            //transform into a ViewModel which is easier to make a select list out of.
+            var members = db.Members.OrderBy(m => m.LastName)
+                .Select(m => new MemberVM { MemberId = m.MemberId, Name = m.FirstName + " " + m.LastName }).ToList();
+            ViewBag.MemberId = new SelectList(members, "MemberId", "Name");
+            ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "TypeName");
             return View();
         }
 
@@ -92,7 +97,7 @@ namespace Garage_2_0.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,RegCode,Type,Brand,Model,Color,NumberOfWheels")] ParkedVehicle parkedVehicle)
+        public ActionResult Create([Bind(Include = "Id,MemberId,VehicleTypeId,RegCode,Type,Brand,Model,Color,NumberOfWheels")] ParkedVehicle parkedVehicle)
         {
             if (ModelState.IsValid)
             {
@@ -117,6 +122,11 @@ namespace Garage_2_0.Controllers
             {
                 return HttpNotFound();
             }
+            var members = db.Members.OrderBy(m => m.LastName)
+                .Select(m => new MemberVM { MemberId = m.MemberId, Name = m.FirstName + " " + m.LastName }).ToList();
+            ViewBag.MemberId = new SelectList(members, "MemberId", "Name");
+            ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "TypeName");
+
             return View(parkedVehicle);
         }
 
@@ -125,7 +135,7 @@ namespace Garage_2_0.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,RegCode,Type,Brand,Model,Color,NumberOfWheels,DateCheckedIn")] ParkedVehicle parkedVehicle)
+        public ActionResult Edit([Bind(Include = "Id,RegCode,Type,Brand,Model,Color,NumberOfWheels,DateCheckedIn,MemberId,VehicleTypeId")] ParkedVehicle parkedVehicle)
         {
             if (ModelState.IsValid)
             {
@@ -189,14 +199,13 @@ namespace Garage_2_0.Controllers
                         vehicles = db.Vehicles.Where(p => p.RegCode == criteria);
                         break;
                     case "type":
-                        VehicleType t;
-                        if (System.Enum.TryParse<VehicleType>(criteria, true, out t))
+                        VehicleType t = db.VehicleTypes.Where(p => p.TypeName.Equals(criteria)).FirstOrDefault();
+                        if (t !=null)
                         {
-                            vehicles = db.Vehicles.Where(p => p.Type == t);
+                            vehicles = db.Vehicles.Where(p => p.VehicleTypeId == t.Id);
                         }
                         else
                         {
-                            ViewBag.VehicleType = criteria;
                             return View("InvalidVehicleType");
                         }
                         break;

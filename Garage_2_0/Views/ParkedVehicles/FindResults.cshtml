@@ -20,6 +20,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Brand)
         </th>
+        <td>
+            <b>Owner</b>
+        </td>
         <th>
             @Html.DisplayNameFor(model => model.Model)
         </th>
@@ -41,10 +44,13 @@
             @Html.DisplayFor(modelItem => item.RegCode)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Type)
+            @Html.DisplayFor(modelItem => item.Type.TypeName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Owner.FullName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Model)

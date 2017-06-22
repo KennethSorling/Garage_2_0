@@ -23,9 +23,16 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Type)
+            @Html.DisplayTextFor(model => model.Type.TypeName)
         </dd>
 
+        <dt>
+           Owner
+        </dt>
+        <dd>
+            @Html.DisplayTextFor(model=>model.Owner.FirstName)
+            @Html.DisplayTextFor(model=>model.Owner.LastName)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Brand)
         </dt>

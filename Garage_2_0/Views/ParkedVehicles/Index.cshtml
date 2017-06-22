@@ -22,6 +22,9 @@
         <th>
             @Html.ActionLink("Brand", "Index", new { orderBy = "brand" })
         </th>
+        <th>
+            @Html.ActionLink("Owner", "Index", new { orderBy = "owner" })
+        </th>
         @*<th>
             @Html.ActionLink("Model", "Index", new { orderBy = "model" })
         </th>
@@ -43,10 +46,13 @@
             @Html.DisplayFor(modelItem => item.RegCode)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Type)
+            @Html.DisplayFor(modelItem => item.Type.TypeName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Owner.FullName)
         </td>
         @*<td>
             @Html.DisplayFor(modelItem => item.Model)

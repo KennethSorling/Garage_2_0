@@ -10,6 +10,22 @@
     <h4>Parked Vehicle</h4>
     <hr />
     <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayTextFor(model => model.Type.TypeName)
+        </dd>
+
+        <dt>
+            Owner
+        </dt>
+        <dd>
+            @Html.DisplayTextFor(model => model.Owner.FirstName)
+            @Html.DisplayTextFor(model => model.Owner.LastName)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.RegCode)
         </dt>
@@ -18,13 +34,6 @@
             @Html.DisplayFor(model => model.RegCode)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Type)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Brand)

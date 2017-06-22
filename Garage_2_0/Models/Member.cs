@@ -10,9 +10,18 @@ namespace Garage_2_0.Models
     public class Member
     {
         public int MemberId { get; set; }
+        public string FullName {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+        }
+
+        [Required]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
         [Display(Name = "Last Name")]
+        [Required]
         public string LastName { get; set; }
         public int Age { get; set; }
         [Display(Name = "Phone Number")]

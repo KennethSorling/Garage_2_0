@@ -14,6 +14,7 @@ namespace Garage_2_0.Models
         public string RegCode { get; set; }
         [Display(Name = "Vehicle Type")]
         public VehicleType Type { get; set; }
+        public Member Owner { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
         public VehicleColor Color { get; set; }
@@ -65,6 +66,7 @@ namespace Garage_2_0.Models
             DateCheckedIn = (DateTime)v.DateCheckedIn;
             DateCheckedOut = DateTime.Now;
             HourlyRate = 65.0f;
+            Owner = v.Owner;
         }
     }
 }

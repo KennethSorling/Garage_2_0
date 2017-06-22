@@ -31,22 +31,42 @@ namespace Garage_2_0.Migrations
             var anHourAgo = currentTime.AddMinutes(-65);
             var yesterdayNoon = new DateTime(2017, currentTime.Month, currentTime.Day - 1, 12, 0, 0, DateTimeKind.Local);
 
-            var airplane = new VehicleType { Id = 1, TypeName = "Airplane" };
-            var boat = new VehicleType { Id = 2, TypeName = "Boat" };
-            var bus = new VehicleType { Id = 3, TypeName = "Bus" };
-            var car = new VehicleType { Id = 4, TypeName = "Car" };
-            var motorbike = new VehicleType { Id = 5, TypeName = "Motorcycle" };
-            context.VehicleTypes.
+            context.VehicleTypes.AddOrUpdate(
+                v => v.TypeName,
+                new VehicleType { TypeName = "AirPlane"},
+                new VehicleType { TypeName = "Boat"},
+                new VehicleType { TypeName = "Bus"},
+                new VehicleType { TypeName = "Car"},
+                new VehicleType { TypeName = "Motorcycle"}
+                );
+            context.SaveChanges();
+
+            context.Members.AddOrUpdate(
+                  m => m.LastName,
+                  new Member { LastName = "Fazzula", FirstName="Manggia", Age = 65, Phone ="070-0707070" },
+                  new Member { LastName = "Karlsson", FirstName = "Bert", Age = 45, Phone = "08-0808080" },
+                  new Member { LastName = "Svenssson", FirstName="Ronny", Age= 49, Phone="073-777 33 22" },
+                  new Member { LastName = "Persson", FirstName = "Axel", Age = 32, Phone = "073-777 33 22" },
+                  new Member { LastName = "Jönsson", FirstName = "Jöns", Age=25, Phone="0771-222 33 44"}
+                );
+            context.SaveChanges();
+
+            var airplaneTypeId  = context.VehicleTypes.Where(p => p.TypeName == "Airplane").FirstOrDefault().Id;
+            var boatTypeId = context.VehicleTypes.Where(p => p.TypeName == "Boat").FirstOrDefault().Id;
+            var busTypeId = context.VehicleTypes.Where(p => p.TypeName == "Bus").FirstOrDefault().Id;
+            var carTypeId = context.VehicleTypes.Where(p => p.TypeName == "Car").FirstOrDefault().Id;
+            var motorbikeTypeId = context.VehicleTypes.Where(p => p.TypeName == "Motorcycle").FirstOrDefault().Id;
+            var ownerId = context.Members.Where(p => p.LastName == "Fazzula").FirstOrDefault().MemberId;
 
             context.Vehicles.AddOrUpdate(
                 p => p.RegCode,
-                new ParkedVehicle { RegCode = "ABC123", Type = airplane, Model = "747", Brand = "Boeing", NumberOfWheels = 3, Color = VehicleColor.White, DateCheckedIn = currentTime},
-                new ParkedVehicle { RegCode = "117", Type= car, Brand="Ford", Model="T", Color = VehicleColor.Black, NumberOfWheels=4, DateCheckedIn = anHourAgo},
-                new ParkedVehicle { RegCode = "QWE546", Type = car, Brand = "Renault", Model = "Clio", Color = VehicleColor.Red, NumberOfWheels = 4, DateCheckedIn = anHourAgo },
-                new ParkedVehicle { RegCode = "GHI789", Type = motorbike, Brand = "Harley-Davidson", Model = "Sportster", NumberOfWheels = 2, Color = VehicleColor.Red, DateCheckedIn = yesterdayNoon },
-                new ParkedVehicle { RegCode = "MNO012", Type = boat, Brand = "Yamaha", Model = "242 Limited S", Color=VehicleColor.White, NumberOfWheels = 0, DateCheckedIn = DateTime.Now.AddHours(-0.5) },
-                new ParkedVehicle { RegCode = "DEF456", Type= bus, Color = VehicleColor.Red, Brand="SL", Model = "Blåbuss", NumberOfWheels=8, DateCheckedIn = DateTime.Now.AddMinutes(-15)},
-                new ParkedVehicle { RegCode = "FED654", Type = bus, Color = VehicleColor.Red, Brand = "London Doubledecker", Model = "Bendy", NumberOfWheels = 8, DateCheckedIn = DateTime.Now.AddMinutes(-125) }
+                new ParkedVehicle { RegCode = "ABC123", VehicleTypeId = airplaneTypeId, Model = "747", Brand = "Boeing", NumberOfWheels = 3, Color = VehicleColor.White, DateCheckedIn = currentTime, MemberId = 1 },
+                new ParkedVehicle { RegCode = "117",    VehicleTypeId = carTypeId, Brand = "Ford", Model = "T", Color = VehicleColor.Black, NumberOfWheels = 4, DateCheckedIn = anHourAgo, MemberId = 2 },
+                new ParkedVehicle { RegCode = "QWE546", VehicleTypeId = carTypeId, Brand = "Renault", Model = "Clio", Color = VehicleColor.Red, NumberOfWheels = 4, DateCheckedIn = anHourAgo, MemberId = 3 },
+                new ParkedVehicle { RegCode = "GHI789", VehicleTypeId = motorbikeTypeId,  Brand = "Harley-Davidson", Model = "Sportster", NumberOfWheels = 2, Color = VehicleColor.Red, DateCheckedIn = yesterdayNoon, MemberId = 5 },
+                new ParkedVehicle { RegCode = "MNO012", VehicleTypeId = boatTypeId, Brand = "Yamaha", Model = "242 Limited S", Color = VehicleColor.White, NumberOfWheels = 0, DateCheckedIn = DateTime.Now.AddHours(-0.5), MemberId = 4 },
+                new ParkedVehicle { RegCode = "DEF456", VehicleTypeId = busTypeId, Color = VehicleColor.Red, Brand = "SL", Model = "Blåbuss", NumberOfWheels = 8, DateCheckedIn = DateTime.Now.AddMinutes(-15), MemberId = 3 },
+                new ParkedVehicle { RegCode = "FED654", VehicleTypeId = busTypeId, Color = VehicleColor.Red, Brand = "London Doubledecker", Model = "Bendy", NumberOfWheels = 8, DateCheckedIn = DateTime.Now.AddMinutes(-125), MemberId = 1 }
                 );
         }
     }
