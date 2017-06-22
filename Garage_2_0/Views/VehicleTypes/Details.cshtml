@@ -1,0 +1,27 @@
+﻿@model Garage_2_0.Models.VehicleType
+
+@{
+    ViewBag.Title = "Vehicle Type Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Details for Vehicle Type</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index") | 
+    @Html.ActionLink("Home", "Index", "Home")
+</p>

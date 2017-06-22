@@ -42,7 +42,10 @@ namespace Garage_2_0.Controllers
                     parkedvehicle = descending ? parkedvehicle.OrderByDescending(p => p.RegCode) : parkedvehicle.OrderBy(p => p.RegCode);
                     break;
                 case "type":
-                    parkedvehicle = descending ? parkedvehicle.OrderByDescending(p => p.Type) : parkedvehicle.OrderBy(p => p.Type);
+                    parkedvehicle = descending ? parkedvehicle.OrderByDescending(p => p.Type.TypeName) : parkedvehicle.OrderBy(p => p.Type.TypeName);
+                    break;
+                case "owner":
+                    parkedvehicle = descending ? parkedvehicle.OrderByDescending(p => p.Owner.FirstName).ThenByDescending(p => p.Owner.LastName) : parkedvehicle.OrderBy(p => p.Owner.FirstName).ThenBy(p=>p.Owner.LastName);
                     break;
                 case "brand":
                     parkedvehicle = descending ? parkedvehicle.OrderByDescending(p => p.Brand) : parkedvehicle.OrderBy(p => p.Brand);

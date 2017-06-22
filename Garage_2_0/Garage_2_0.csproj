@@ -131,6 +131,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\ParkedVehiclesController.cs" />
+    <Compile Include="Controllers\VehicleTypesController.cs" />
     <Compile Include="DataAccessLayer\DatabaseContext.cs" />
     <Compile Include="Enum\VehicleColor.cs" />
     <Compile Include="Global.asax.cs">
@@ -204,6 +205,11 @@
     <Content Include="Views\Members\Find.cshtml" />
     <Content Include="Views\Members\FindResults.cshtml" />
     <Content Include="Views\Members\SnakeEyes.cshtml" />
+    <Content Include="Views\VehicleTypes\Create.cshtml" />
+    <Content Include="Views\VehicleTypes\Delete.cshtml" />
+    <Content Include="Views\VehicleTypes\Details.cshtml" />
+    <Content Include="Views\VehicleTypes\Edit.cshtml" />
+    <Content Include="Views\VehicleTypes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

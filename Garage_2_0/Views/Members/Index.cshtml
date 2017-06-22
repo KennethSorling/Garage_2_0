@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<Garage_2_0.Models.Member>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Members";
 }
 
-<h2>Index</h2>
+<h2>Members</h2>
 
 <p>
     <p style="font-size:125%;">
-    @Html.ActionLink("Create New Member", "Create")
+    @Html.ActionLink("Register New Member", "Create")
 </p>
 <table class="table">
     <tr>
@@ -44,7 +44,7 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.MemberId }) |
             @Html.ActionLink("Details", "Details", new { id=item.MemberId }) |
-            @Html.ActionLink("Remove", "Delete", new { id=item.MemberId })
+            @Html.ActionLink("Unregister", "Delete", new { id=item.MemberId })
         </td>
     </tr>
 }

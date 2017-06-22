@@ -17,8 +17,13 @@
     <tr>
         <th>
             @Html.ActionLink("Registration Code", "Index", new { orderBy = "regcode" })
+        </th>
+        <th>
+            @Html.ActionLink("Owner", "Index", new { orderBy = "owner" })
+        </th>
         <th>
             @Html.ActionLink("Vehicle Type", "Index", new { orderBy = "type" })
+        </th>
         <th>
             @Html.ActionLink("Brand", "Index", new { orderBy = "brand" })
         </th>
@@ -34,7 +39,10 @@
             @Html.DisplayFor(modelItem => item.RegCode)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Type)
+            @Html.DisplayFor(modelItem => item.Owner.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type.TypeName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Brand)
