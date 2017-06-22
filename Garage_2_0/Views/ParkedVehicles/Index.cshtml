@@ -17,13 +17,15 @@
     <tr>
         <th>
             @Html.ActionLink("Registration Code", "Index", new { orderBy = "regcode" })
+        </th>
+        <th>
+            @Html.ActionLink("Owner", "Index", new { orderBy = "owner" })
+        </th>
         <th>
             @Html.ActionLink("Vehicle Type", "Index", new { orderBy = "type" })
+        </th>
         <th>
             @Html.ActionLink("Brand", "Index", new { orderBy = "brand" })
-        </th>
-        @*<th>
-            @Html.ActionLink("Model", "Index", new { orderBy = "model" })
         </th>
         <th>
             @Html.ActionLink("Date Checked In", "Index", new { orderBy = "datecheckedin" })
@@ -37,16 +39,13 @@
             @Html.DisplayFor(modelItem => item.RegCode)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Owner.FullName)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Type.TypeName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Brand)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.Model)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Color)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DateCheckedIn)
