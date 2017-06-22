@@ -22,19 +22,10 @@
         <th>
             @Html.ActionLink("Brand", "Index", new { orderBy = "brand" })
         </th>
-        @*<th>
-            @Html.ActionLink("Model", "Index", new { orderBy = "model" })
-        </th>
-        <th>
-            @Html.ActionLink("Color", "Index", new { orderBy = "color" })
-        </th>
-        <th>
-            @Html.ActionLink("Number Of Wheels", "Index", new { orderBy = "numberofwheels" })
-        </th>*@
         <th>
             @Html.ActionLink("Date Checked In", "Index", new { orderBy = "datecheckedin" })
         </th>
-        <th style="color:brown;">Action</th>
+        <th style="color:maroon;">Action</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -48,15 +39,6 @@
         <td>
             @Html.DisplayFor(modelItem => item.Brand)
         </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.Model)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Color)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumberOfWheels)
-        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.DateCheckedIn)
         </td>
