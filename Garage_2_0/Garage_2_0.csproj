@@ -136,21 +136,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706220831411_updated seed method.cs" />
-    <Compile Include="Migrations\201706220831411_updated seed method.Designer.cs">
-      <DependentUpon>201706220831411_updated seed method.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706221018467_Updated a buncha stuff.cs" />
-    <Compile Include="Migrations\201706221018467_Updated a buncha stuff.Designer.cs">
-      <DependentUpon>201706221018467_Updated a buncha stuff.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706221116420_augmented Vehicle.cs" />
-    <Compile Include="Migrations\201706221116420_augmented Vehicle.Designer.cs">
-      <DependentUpon>201706221116420_augmented Vehicle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706221138336_Added VM for Members.cs" />
-    <Compile Include="Migrations\201706221138336_Added VM for Members.Designer.cs">
-      <DependentUpon>201706221138336_Added VM for Members.cs</DependentUpon>
+    <Compile Include="Migrations\201706221239529_NewDatabase.cs" />
+    <Compile Include="Migrations\201706221239529_NewDatabase.Designer.cs">
+      <DependentUpon>201706221239529_NewDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Member.cs" />
@@ -229,17 +217,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706220831411_updated seed method.resx">
-      <DependentUpon>201706220831411_updated seed method.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706221018467_Updated a buncha stuff.resx">
-      <DependentUpon>201706221018467_Updated a buncha stuff.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706221116420_augmented Vehicle.resx">
-      <DependentUpon>201706221116420_augmented Vehicle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706221138336_Added VM for Members.resx">
-      <DependentUpon>201706221138336_Added VM for Members.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706221239529_NewDatabase.resx">
+      <DependentUpon>201706221239529_NewDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
