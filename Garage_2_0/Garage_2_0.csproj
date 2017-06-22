@@ -137,37 +137,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706120949143_Initial Model.cs" />
-    <Compile Include="Migrations\201706120949143_Initial Model.Designer.cs">
-      <DependentUpon>201706120949143_Initial Model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706121237106_fixed date bug, I think.cs" />
-    <Compile Include="Migrations\201706121237106_fixed date bug, I think.Designer.cs">
-      <DependentUpon>201706121237106_fixed date bug, I think.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706131405143_Added ViewModel.cs" />
-    <Compile Include="Migrations\201706131405143_Added ViewModel.Designer.cs">
-      <DependentUpon>201706131405143_Added ViewModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706131428532_Augmented ViewModel.cs" />
-    <Compile Include="Migrations\201706131428532_Augmented ViewModel.Designer.cs">
-      <DependentUpon>201706131428532_Augmented ViewModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706131440074_Augmented ViewModel again.cs" />
-    <Compile Include="Migrations\201706131440074_Augmented ViewModel again.Designer.cs">
-      <DependentUpon>201706131440074_Augmented ViewModel again.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706211139062_AA.cs" />
-    <Compile Include="Migrations\201706211139062_AA.Designer.cs">
-      <DependentUpon>201706211139062_AA.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706211147021_update_database.cs" />
-    <Compile Include="Migrations\201706211147021_update_database.Designer.cs">
-      <DependentUpon>201706211147021_update_database.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706211148599_aa.cs" />
-    <Compile Include="Migrations\201706211148599_aa.Designer.cs">
-      <DependentUpon>201706211148599_aa.cs</DependentUpon>
+    <Compile Include="Migrations\201706220653380_NyDatabas.cs" />
+    <Compile Include="Migrations\201706220653380_NyDatabas.Designer.cs">
+      <DependentUpon>201706220653380_NyDatabas.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Member.cs" />
@@ -244,26 +216,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706120949143_Initial Model.resx">
-      <DependentUpon>201706120949143_Initial Model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706121237106_fixed date bug, I think.resx">
-      <DependentUpon>201706121237106_fixed date bug, I think.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706131405143_Added ViewModel.resx">
-      <DependentUpon>201706131405143_Added ViewModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706131428532_Augmented ViewModel.resx">
-      <DependentUpon>201706131428532_Augmented ViewModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706131440074_Augmented ViewModel again.resx">
-      <DependentUpon>201706131440074_Augmented ViewModel again.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706211139062_AA.resx">
-      <DependentUpon>201706211139062_AA.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706211147021_update_database.resx">
-      <DependentUpon>201706211147021_update_database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706220653380_NyDatabas.resx">
+      <DependentUpon>201706220653380_NyDatabas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

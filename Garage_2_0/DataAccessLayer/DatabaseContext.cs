@@ -9,7 +9,7 @@ namespace Garage_2_0.DataAccessLayer
 {
     public class GarageContext: DbContext
     {
-        public GarageContext() : base("Garage2.0") { }
+        public GarageContext() : base("Garage2.5") { }
         public DbSet<ParkedVehicle> Vehicles { get; set;}
         public DbSet<Member> Members { get; set; }
 

@@ -241,3 +241,4 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 /Images/garage.jpg
+/Garage_2_0/Migrations
