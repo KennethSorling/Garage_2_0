@@ -253,7 +253,6 @@ namespace Garage_2_0.Controllers
                             //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
                             return View("SnakeEyes");
                         }
-                        break;
                     default:
                         return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
                 }
@@ -278,7 +277,6 @@ namespace Garage_2_0.Controllers
             }
             return View("SnakeEyes");
         }
-
 
 
         protected override void Dispose(bool disposing)

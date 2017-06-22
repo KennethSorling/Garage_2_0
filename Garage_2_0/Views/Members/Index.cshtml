@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Garage_2_0.Models.Member>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New Member", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("First Name", "Index", new { orderBy = "firstname" })
+        </th>
+        <th>
+            @Html.ActionLink("Last Name", "Index", new { orderBy = "lastname" })
+        </th>
+        <th>
+            @Html.ActionLink("Age", "Index", new { orderBy = "age" })
+        </th>
+        <th>
+            @Html.ActionLink("Phone Number", "Index", new { orderBy = "phone" })
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MemberId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MemberId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MemberId })
+        </td>
+    </tr>
+}
+
+</table>
