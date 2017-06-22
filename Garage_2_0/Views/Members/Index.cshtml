@@ -7,6 +7,7 @@
 <h2>Index</h2>
 
 <p>
+    <p style="font-size:125%;">
     @Html.ActionLink("Create New Member", "Create")
 </p>
 <table class="table">
@@ -23,7 +24,7 @@
         <th>
             @Html.ActionLink("Phone Number", "Index", new { orderBy = "phone" })
         </th>
-        <th></th>
+        <th style="color:maroon;">Action</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -43,7 +44,7 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.MemberId }) |
             @Html.ActionLink("Details", "Details", new { id=item.MemberId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MemberId })
+            @Html.ActionLink("Remove", "Delete", new { id=item.MemberId })
         </td>
     </tr>
 }
